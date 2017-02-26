@@ -1,4 +1,4 @@
-// Copyright 2013-2014 The CGMath Developers. For a full listing of the authors,
+// Copyright 2013-2014 The cgmath_lux Developers. For a full listing of the authors,
 // refer to the Cargo.toml file at the top-level directory of this distribution.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,9 +13,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-extern crate cgmath;
+extern crate cgmath_lux;
 
-use cgmath::{Vector4, ortho, Matrix4};
+use cgmath_lux::{Vector4, ortho, Matrix4};
 
 #[test]
 fn test_ortho_scale() {

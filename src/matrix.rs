@@ -1,4 +1,4 @@
-// Copyright 2013-2014 The CGMath Developers. For a full listing of the authors,
+// Copyright 2013-2014 The cgmath_lux Developers. For a full listing of the authors,
 // refer to the Cargo.toml file at the top-level directory of this distribution.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -36,7 +36,6 @@ use vector::{Vector2, Vector3, Vector4};
 /// This type is marked as `#[repr(C)]`.
 #[repr(C)]
 #[derive(Copy, Clone, PartialEq)]
-#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
 #[cfg_attr(feature = "eders", derive(Serialize, Deserialize))]
 pub struct Matrix2<S> {
     /// The first column of the matrix.
@@ -50,7 +49,6 @@ pub struct Matrix2<S> {
 /// This type is marked as `#[repr(C)]`.
 #[repr(C)]
 #[derive(Copy, Clone, PartialEq)]
-#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
 #[cfg_attr(feature = "eders", derive(Serialize, Deserialize))]
 pub struct Matrix3<S> {
     /// The first column of the matrix.
@@ -66,7 +64,6 @@ pub struct Matrix3<S> {
 /// This type is marked as `#[repr(C)]`.
 #[repr(C)]
 #[derive(Copy, Clone, PartialEq)]
-#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
 #[cfg_attr(feature = "eders", derive(Serialize, Deserialize))]
 pub struct Matrix4<S> {
     /// The first column of the matrix.

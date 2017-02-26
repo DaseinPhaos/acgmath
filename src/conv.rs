@@ -7,10 +7,10 @@
 //! ```rust
 //! #[macro_use]
 //! extern crate glium;
-//! extern crate cgmath;
+//! extern crate cgmath_lux;
 //!
-//! use cgmath::{Matrix4, Point2};
-//! use cgmath::prelude::*;
+//! use cgmath_lux::{Matrix4, Point2};
+//! use cgmath_lux::prelude::*;
 //!
 //! # fn main() {
 //! let point = Point2::new(1, 2);
@@ -29,11 +29,11 @@
 //! ```rust
 //! #[macro_use]
 //! extern crate glium;
-//! extern crate cgmath;
+//! extern crate cgmath_lux;
 //!
-//! use cgmath::{Matrix4, Point2};
-//! use cgmath::prelude::*;
-//! use cgmath::conv::*;
+//! use cgmath_lux::{Matrix4, Point2};
+//! use cgmath_lux::prelude::*;
+//! use cgmath_lux::conv::*;
 //!
 //! # fn main() {
 //! let point = Point2::new(1, 2);

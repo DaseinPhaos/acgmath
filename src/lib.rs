@@ -1,4 +1,4 @@
-// Copyright 2013-2014 The CGMath Developers. For a full listing of the authors,
+// Copyright 2013-2014 The cgmath_lux Developers. For a full listing of the authors,
 // refer to the Cargo.toml file at the top-level directory of this distribution.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -47,10 +47,8 @@
 //! example:
 //!
 //! ```rust
-//! use cgmath::prelude::*;
+//! use cgmath_lux::prelude::*;
 //! ```
-#![cfg_attr(feature = "eders", feature(plugin, custom_derive))]
-#![cfg_attr(feature = "eders", plugin(serde_macros))]
 #![cfg_attr(feature = "use_simd", feature(specialization))]
 
 #[macro_use]
@@ -58,8 +56,8 @@ extern crate approx;
 pub extern crate num_traits;
 extern crate rand;
 
-#[cfg(feature = "rustc-serialize")]
-extern crate rustc_serialize;
+#[cfg(feature = "eders")]
+extern crate serde_derive;
 
 #[cfg(feature = "eders")]
 extern crate serde;

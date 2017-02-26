@@ -1,4 +1,4 @@
-// Copyright 2013-2014 The CGMath Developers. For a full listing of the authors,
+// Copyright 2013-2014 The cgmath_lux Developers. For a full listing of the authors,
 // refer to the Cargo.toml file at the top-level directory of this distribution.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -37,7 +37,6 @@ use vector::Vector3;
 /// This type is marked as `#[repr(C)]`.
 #[repr(C)]
 #[derive(Copy, Clone, Debug, PartialEq)]
-#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
 #[cfg_attr(feature = "eders", derive(Serialize, Deserialize))]
 pub struct Quaternion<S> {
     /// The scalar part of the quaternion.

@@ -1,4 +1,4 @@
-// Copyright 2016 The CGMath Developers. For a full listing of the authors,
+// Copyright 2016 The cgmath_lux Developers. For a full listing of the authors,
 // refer to the Cargo.toml file at the top-level directory of this distribution.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -37,8 +37,8 @@ pub trait Array where
     /// Construct a vector from a single value, replicating it.
     ///
     /// ```rust
-    /// use cgmath::prelude::*;
-    /// use cgmath::Vector3;
+    /// use cgmath_lux::prelude::*;
+    /// use cgmath_lux::Vector3;
     ///
     /// assert_eq!(Vector3::from_value(1),
     ///            Vector3::new(1, 1, 1));
@@ -112,7 +112,7 @@ pub trait ElementWise<Rhs = Self> {
 /// - `Neg<Output = Self>`
 ///
 /// ```rust
-/// use cgmath::Vector3;
+/// use cgmath_lux::Vector3;
 ///
 /// let velocity0 = Vector3::new(1, 2, 0);
 /// let velocity1 = Vector3::new(1, 1, 0);
@@ -126,8 +126,8 @@ pub trait ElementWise<Rhs = Self> {
 /// `Zero`. Adding this to another vector should have no effect:
 ///
 /// ```rust
-/// use cgmath::prelude::*;
-/// use cgmath::Vector2;
+/// use cgmath_lux::prelude::*;
+/// use cgmath_lux::Vector2;
 ///
 /// let v = Vector2::new(1, 2);
 /// assert_eq!(v + Vector2::zero(), v);
@@ -143,7 +143,7 @@ pub trait ElementWise<Rhs = Self> {
 /// - `Rem<Self::Scalar, Output = Self>`
 ///
 /// ```rust
-/// use cgmath::Vector2;
+/// use cgmath_lux::Vector2;
 ///
 /// let translation = Vector2::new(3.0, 4.0);
 /// let scale_factor = 2.0;
@@ -257,7 +257,7 @@ pub trait InnerSpace: VectorSpace where
 ///
 /// # Point-Vector distinction
 ///
-/// `cgmath` distinguishes between points and vectors in the following way:
+/// `cgmath_lux` distinguishes between points and vectors in the following way:
 ///
 /// - Points are _locations_ relative to an origin
 /// - Vectors are _displacements_ between those points
@@ -266,7 +266,7 @@ pub trait InnerSpace: VectorSpace where
 /// following:
 ///
 /// ```rust
-/// use cgmath::Point3;
+/// use cgmath_lux::Point3;
 ///
 /// let p0 = Point3::new(1.0, 2.0, 3.0);
 /// let p1 = Point3::new(-3.0, 1.0, 2.0);
@@ -277,7 +277,7 @@ pub trait InnerSpace: VectorSpace where
 /// to see what is going on:
 ///
 /// ```rust
-/// # use cgmath::{Point3, Vector3};
+/// # use cgmath_lux::{Point3, Vector3};
 /// #
 /// # let p0 = Point3::new(1.0, 2.0, 3.0);
 /// # let p1 = Point3::new(-3.0, 1.0, 2.0);
@@ -337,8 +337,8 @@ pub trait EuclideanSpace: Copy + Clone where
     /// Returns the middle point between two other points.
     ///
     /// ```rust
-    /// use cgmath::prelude::*;
-    /// use cgmath::Point3;
+    /// use cgmath_lux::prelude::*;
+    /// use cgmath_lux::Point3;
     ///
     /// let p = Point3::midpoint(
     ///     Point3::new(1.0, 2.0, 3.0),
@@ -353,8 +353,8 @@ pub trait EuclideanSpace: Copy + Clone where
     /// Returns the average position of all points in the slice.
     ///
     /// ```rust
-    /// use cgmath::prelude::*;
-    /// use cgmath::Point2;
+    /// use cgmath_lux::prelude::*;
+    /// use cgmath_lux::Point2;
     ///
     /// let triangle = [
     ///     Point2::new(1.0, 1.0),
@@ -605,8 +605,8 @@ pub trait Angle where
     /// Compute the sine of the angle, returning a unitless ratio.
     ///
     /// ```rust
-    /// use cgmath::prelude::*;
-    /// use cgmath::Rad;
+    /// use cgmath_lux::prelude::*;
+    /// use cgmath_lux::Rad;
     ///
     /// let angle = Rad(35.0);
     /// let ratio: f32 = Rad::sin(angle);
@@ -616,8 +616,8 @@ pub trait Angle where
     /// Compute the cosine of the angle, returning a unitless ratio.
     ///
     /// ```rust
-    /// use cgmath::prelude::*;
-    /// use cgmath::Rad;
+    /// use cgmath_lux::prelude::*;
+    /// use cgmath_lux::Rad;
     ///
     /// let angle = Rad(35.0);
     /// let ratio: f32 = Rad::cos(angle);
@@ -627,8 +627,8 @@ pub trait Angle where
     /// Compute the tangent of the angle, returning a unitless ratio.
     ///
     /// ```rust
-    /// use cgmath::prelude::*;
-    /// use cgmath::Rad;
+    /// use cgmath_lux::prelude::*;
+    /// use cgmath_lux::Rad;
     ///
     /// let angle = Rad(35.0);
     /// let ratio: f32 = Rad::tan(angle);
@@ -642,8 +642,8 @@ pub trait Angle where
     /// sine and cosine of a single angle is a common operation.
     ///
     /// ```rust
-    /// use cgmath::prelude::*;
-    /// use cgmath::Rad;
+    /// use cgmath_lux::prelude::*;
+    /// use cgmath_lux::Rad;
     ///
     /// let angle = Rad(35.0);
     /// let (s, c) = Rad::sin_cos(angle);
@@ -655,8 +655,8 @@ pub trait Angle where
     /// This is the same as computing the reciprocal of `Self::sin`.
     ///
     /// ```rust
-    /// use cgmath::prelude::*;
-    /// use cgmath::Rad;
+    /// use cgmath_lux::prelude::*;
+    /// use cgmath_lux::Rad;
     ///
     /// let angle = Rad(35.0);
     /// let ratio: f32 = Rad::csc(angle);
@@ -671,8 +671,8 @@ pub trait Angle where
     /// This is the same as computing the reciprocal of `Self::tan`.
     ///
     /// ```rust
-    /// use cgmath::prelude::*;
-    /// use cgmath::Rad;
+    /// use cgmath_lux::prelude::*;
+    /// use cgmath_lux::Rad;
     ///
     /// let angle = Rad(35.0);
     /// let ratio: f32 = Rad::cot(angle);
@@ -687,8 +687,8 @@ pub trait Angle where
     /// This is the same as computing the reciprocal of `Self::cos`.
     ///
     /// ```rust
-    /// use cgmath::prelude::*;
-    /// use cgmath::Rad;
+    /// use cgmath_lux::prelude::*;
+    /// use cgmath_lux::Rad;
     ///
     /// let angle = Rad(35.0);
     /// let ratio: f32 = Rad::sec(angle);
@@ -701,8 +701,8 @@ pub trait Angle where
     /// Compute the arcsine of the ratio, returning the resulting angle.
     ///
     /// ```rust
-    /// use cgmath::prelude::*;
-    /// use cgmath::Rad;
+    /// use cgmath_lux::prelude::*;
+    /// use cgmath_lux::Rad;
     ///
     /// let angle: Rad<f32> = Rad::asin(0.5);
     /// ```
@@ -711,8 +711,8 @@ pub trait Angle where
     /// Compute the arccosine of the ratio, returning the resulting angle.
     ///
     /// ```rust
-    /// use cgmath::prelude::*;
-    /// use cgmath::Rad;
+    /// use cgmath_lux::prelude::*;
+    /// use cgmath_lux::Rad;
     ///
     /// let angle: Rad<f32> = Rad::acos(0.5);
     /// ```
@@ -721,8 +721,8 @@ pub trait Angle where
     /// Compute the arctangent of the ratio, returning the resulting angle.
     ///
     /// ```rust
-    /// use cgmath::prelude::*;
-    /// use cgmath::Rad;
+    /// use cgmath_lux::prelude::*;
+    /// use cgmath_lux::Rad;
     ///
     /// let angle: Rad<f32> = Rad::atan(0.5);
     /// ```

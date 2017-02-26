@@ -1,4 +1,4 @@
-// Copyright 2013-2014 The CGMath Developers. For a full listing of the authors,
+// Copyright 2013-2014 The cgmath_lux Developers. For a full listing of the authors,
 // refer to the Cargo.toml file at the top-level directory of this distribution.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,9 +15,9 @@
 
 #[macro_use]
 extern crate approx;
-extern crate cgmath;
+extern crate cgmath_lux;
 
-use cgmath::{Point1, Point2, Point3};
+use cgmath_lux::{Point1, Point2, Point3};
 
 macro_rules! impl_test_mul {
     ($PointN:ident { $($field:ident),+ }, $s:expr, $v:expr) => (

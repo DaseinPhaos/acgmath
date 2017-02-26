@@ -1,4 +1,4 @@
-// Copyright 2013-2014 The CGMath Developers. For a full listing of the authors,
+// Copyright 2013-2014 The cgmath_lux Developers. For a full listing of the authors,
 // refer to the Cargo.toml file at the top-level directory of this distribution.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,7 +33,6 @@ use vector::{Vector1, Vector2, Vector3, Vector4};
 /// This type is marked as `#[repr(C)]`.
 #[repr(C)]
 #[derive(PartialEq, Eq, Copy, Clone, Hash)]
-#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
 #[cfg_attr(feature = "eders", derive(Serialize, Deserialize))]
 pub struct Point1<S> {
     pub x: S,
@@ -44,7 +43,6 @@ pub struct Point1<S> {
 /// This type is marked as `#[repr(C)]`.
 #[repr(C)]
 #[derive(PartialEq, Eq, Copy, Clone, Hash)]
-#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
 #[cfg_attr(feature = "eders", derive(Serialize, Deserialize))]
 pub struct Point2<S> {
     pub x: S,
@@ -56,7 +54,6 @@ pub struct Point2<S> {
 /// This type is marked as `#[repr(C)]`.
 #[repr(C)]
 #[derive(PartialEq, Eq, Copy, Clone, Hash)]
-#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
 #[cfg_attr(feature = "eders", derive(Serialize, Deserialize))]
 pub struct Point3<S> {
     pub x: S,

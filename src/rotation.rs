@@ -1,4 +1,4 @@
-// Copyright 2014 The CGMath Developers. For a full listing of the authors,
+// Copyright 2014 The cgmath_lux Developers. For a full listing of the authors,
 // refer to the Cargo.toml file at the top-level directory of this distribution.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -110,11 +110,11 @@ pub trait Rotation3<S: BaseFloat>: Rotation<Point3<S>>
 /// matrix:
 ///
 /// ```no_run
-/// use cgmath::Rad;
-/// use cgmath::Vector2;
-/// use cgmath::{Matrix, Matrix2};
-/// use cgmath::{Rotation, Rotation2, Basis2};
-/// use cgmath::ApproxEq;
+/// use cgmath_lux::Rad;
+/// use cgmath_lux::Vector2;
+/// use cgmath_lux::{Matrix, Matrix2};
+/// use cgmath_lux::{Rotation, Rotation2, Basis2};
+/// use cgmath_lux::ApproxEq;
 /// use std::f64;
 ///
 /// // For simplicity, we will rotate the unit x vector to the unit y vector --
@@ -140,7 +140,6 @@ pub trait Rotation3<S: BaseFloat>: Rotation<Point3<S>>
 /// // assert_ulps_eq!(&unit_y3, &unit_y2); // TODO: Figure out how to use this
 /// ```
 #[derive(PartialEq, Copy, Clone)]
-#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
 #[cfg_attr(feature = "eders", derive(Serialize, Deserialize))]
 pub struct Basis2<S> {
     mat: Matrix2<S>
@@ -234,7 +233,6 @@ impl<S: fmt::Debug> fmt::Debug for Basis2<S> {
 /// `math::Matrix3`. To ensure orthogonality is maintained, the operations have
 /// been restricted to a subeset of those implemented on `Matrix3`.
 #[derive(PartialEq, Copy, Clone)]
-#[cfg_attr(feature = "rustc-serialize", derive(RustcEncodable, RustcDecodable))]
 #[cfg_attr(feature = "eders", derive(Serialize, Deserialize))]
 pub struct Basis3<S> {
     mat: Matrix3<S>

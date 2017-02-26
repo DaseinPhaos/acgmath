@@ -1,7 +1,7 @@
 [package]
 
-name = "cgmath"
-version = "0.12.0"
+name = "cgmath_lux"
+version = "0.13.0"
 authors = ["Brendan Zabarauskas <bjzaba@yahoo.com.au>",
         "Brian Heylin",
         "Colin Sherratt",
@@ -16,31 +16,28 @@ authors = ["Brendan Zabarauskas <bjzaba@yahoo.com.au>",
 license = "Apache-2.0"
 description = "A linear algebra and mathematics library for computer graphics."
 
-documentation = "https://docs.rs/cgmath"
-homepage = "https://github.com/brendanzab/cgmath"
-repository = "https://github.com/brendanzab/cgmath"
+homepage = "https://github.com/DaseinPhaos/cgmath"
+repository = "https://github.com/DaseinPhaos/cgmath"
 readme = "README.md"
 
 keywords = ["gamedev", "math", "matrix", "vector", "quaternion"]
 
 [lib]
-name = "cgmath"
+name = "cgmath_lux"
 
 [features]
 unstable = []
-default = ["rustc-serialize"]
-eders = ["serde", "serde_macros"]
+default = ["eders", "use_simd"]
+eders = ["serde", "serde_derive"]
 use_simd = ["simd"]
-
 [dependencies]
 approx = "0.1"
 num-traits = "0.1"
 rand = "0.3"
-rustc-serialize = { version = "0.3", optional = true }
-serde = { version = "0.8", optional = true }
-serde_macros = { version = "0.8", optional = true }
+serde = { version = "0.9", optional = true }
+serde_derive = { version = "0.9", optional = true }
 simd = { version = "0.2", optional = true }
 
 [dev-dependencies]
 glium = "0.15"
-serde_json = "0.8"
+serde_json = "0.9"

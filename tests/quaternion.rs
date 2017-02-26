@@ -1,4 +1,4 @@
-// Copyright 2013-2014 The CGMath Developers. For a full listing of the authors,
+// Copyright 2013-2014 The cgmath_lux Developers. For a full listing of the authors,
 // refer to the Cargo.toml file at the top-level directory of this distribution.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +16,7 @@
 #[macro_use]
 extern crate approx;
 #[macro_use]
-extern crate cgmath;
+extern crate cgmath_lux;
 
 macro_rules! impl_test_mul {
     ($s:expr, $v:expr) => (
@@ -41,7 +41,7 @@ macro_rules! impl_test_div {
 }
 
 mod operators {
-    use cgmath::*;
+    use cgmath_lux::*;
 
     #[test]
     fn test_mul() {
@@ -57,7 +57,7 @@ mod operators {
 mod to_from_euler {
     use std::f32;
 
-    use cgmath::*;
+    use cgmath_lux::*;
 
     fn check_euler(rotation: Euler<Rad<f32>>) {
         assert_relative_eq!(Euler::from(Quaternion::from(rotation)), rotation, epsilon = 0.001);
@@ -80,7 +80,7 @@ mod to_from_euler {
 
 mod from {
     mod matrix3 {
-        use cgmath::*;
+        use cgmath_lux::*;
 
         fn check_with_euler(x: Rad<f32>, y: Rad<f32>, z: Rad<f32>) {
             let matrix3 = Matrix3::from(Euler { x: x, y: y, z: z });
@@ -116,7 +116,7 @@ mod from {
 }
 
 mod arc {
-    use cgmath::*;
+    use cgmath_lux::*;
 
     #[inline]
     fn test(src: Vector3<f32>, dst: Vector3<f32>) {
@@ -152,7 +152,7 @@ mod arc {
 }
 
 mod rotate_from_euler {
-    use cgmath::*;
+    use cgmath_lux::*;
 
     #[test]
     fn test_x() {
@@ -208,7 +208,7 @@ mod rotate_from_euler {
 }
 
 mod rotate_from_axis_angle {
-    use cgmath::*;
+    use cgmath_lux::*;
 
     #[test]
     fn test_x() {
