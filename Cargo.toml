@@ -17,8 +17,8 @@ authors = ["Brendan Zabarauskas <bjzaba@yahoo.com.au>",
 license = "Apache-2.0"
 description = "A linear algebra and mathematics library for computer graphics."
 
-homepage = "https://github.com/DaseinPhaos/cgmath"
-repository = "https://github.com/DaseinPhaos/cgmath"
+homepage = "https://github.com/DaseinPhaos/cgmath/tree/luxdev"
+repository = "https://github.com/DaseinPhaos/cgmath/tree/luxdev"
 readme = "README.md"
 
 keywords = ["gamedev", "math", "matrix", "vector", "quaternion"]
