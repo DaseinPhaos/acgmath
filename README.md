@@ -1,6 +1,6 @@
 # acgmath-rs
 
-A testbed fork of `cgmath-rs`.
+A testbed fork of `cgmath-rs`. With optional serialization and simd support.
 
 A linear algebra and mathematics library for computer graphics.
 
@@ -44,6 +44,10 @@ and benchmarks are also required, so help on that front would be most
 appreciated.
 
 ## Support
+
+Please contanct me via issue or PR. Or email, if you like.
+
+Support channels of the original `cgmath`:
 
 Contact `bjz` on irc.mozilla.org [#rust](http://mibbit.com/?server=irc.mozilla.org&channel=%23rust)
 and [#rust-gamedev](http://mibbit.com/?server=irc.mozilla.org&channel=%23rust-gamedev),
