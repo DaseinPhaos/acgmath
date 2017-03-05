@@ -1,6 +1,6 @@
-# cgmath-lux-rs
+# acgmath-rs
 
-A testbed forked from `cgmath-rs`.
+A testbed fork of `cgmath-rs`.
 
 A linear algebra and mathematics library for computer graphics.
 
