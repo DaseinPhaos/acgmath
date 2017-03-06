@@ -15,10 +15,10 @@ authors = ["Brendan Zabarauskas <bjzaba@yahoo.com.au>",
         "luxko"
 ]
 license = "Apache-2.0"
-description = "A linear algebra and mathematics library for computer graphics."
+description = "A linear algebra and mathematics library for computer graphics. A fork of `cgmath`."
 
-homepage = "https://github.com/DaseinPhaos/cgmath/tree/luxdev"
-repository = "https://github.com/DaseinPhaos/cgmath/tree/luxdev"
+homepage = "https://github.com/DaseinPhaos/acgmath/tree/luxdev"
+repository = "https://github.com/DaseinPhaos/acgmath/tree/luxdev"
 readme = "README.md"
 
 keywords = ["gamedev", "math", "matrix", "vector", "quaternion"]
