@@ -2,6 +2,12 @@
 
 A testbed fork of `cgmath-rs`. With optional serialization and simd support.
 
+## Why the Fork
+
+I want to experiment with features like `simd` and `serde` rapidly. Filing a PR and waiting for approval while messing with `cgmath`'s own version number is just too annoying.
+
+# Introduction
+
 A linear algebra and mathematics library for computer graphics.
 
 The library provides:

@@ -1,4 +1,4 @@
-// Copyright 2013-2014 The cgmath_lux Developers. For a full listing of the authors,
+// Copyright 2013-2014 The acgmath Developers. For a full listing of the authors,
 // refer to the Cargo.toml file at the top-level directory of this distribution.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,9 +16,9 @@
 #[macro_use]
 extern crate approx;
 #[macro_use]
-extern crate cgmath_lux;
+extern crate acgmath;
 
-use cgmath_lux::*;
+use acgmath::*;
 use std::f64;
 
 #[test]
@@ -190,7 +190,7 @@ fn test_is_perpendicular() {
 
 #[cfg(test)]
 mod test_magnitude {
-    use cgmath_lux::*;
+    use acgmath::*;
 
     #[test]
     fn test_vector2(){

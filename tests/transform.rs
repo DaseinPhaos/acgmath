@@ -1,4 +1,4 @@
-// Copyright 2014 The cgmath_lux Developers. For a full listing of the authors,
+// Copyright 2014 The acgmath Developers. For a full listing of the authors,
 // refer to the Cargo.toml file at the top-level directory of this distribution.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,12 +15,12 @@
 
 #[macro_use]
 extern crate approx;
-extern crate cgmath_lux;
+extern crate acgmath;
 
 #[cfg(feature = "eders")]
 extern crate serde_json;
 
-use cgmath_lux::*;
+use acgmath::*;
 
 #[test]
 fn test_invert() {

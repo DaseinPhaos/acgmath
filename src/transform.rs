@@ -1,4 +1,4 @@
-// Copyright 2014 The cgmath_lux Developers. For a full listing of the authors,
+// Copyright 2014 The acgmath Developers. For a full listing of the authors,
 // refer to the Cargo.toml file at the top-level directory of this distribution.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -194,14 +194,15 @@ mod eders_ser {
     impl<V: VectorSpace, R> Serialize for Decomposed<V, R>
         where V: Serialize, V::Scalar: Serialize, R: Serialize
     {
-        fn serialize<S>(&self, serializer: &mut S) -> Result<(), S::Error>
+        fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
             where S: serde::Serializer
         {
-            let mut state = try!(serializer.serialize_struct("Decomposed", 3));
-            try!(serializer.serialize_struct_elt(&mut state, "scale", &self.scale));
-            try!(serializer.serialize_struct_elt(&mut state, "rot", &self.rot));
-            try!(serializer.serialize_struct_elt(&mut state, "disp", &self.disp));
-            serializer.serialize_struct_end(state)
+            use serde::ser::SerializeStruct;
+            let mut state = serializer.serialize_struct("Decomposed", 3)?;
+            state.serialize_field("scale", &self.scale)?;
+            state.serialize_field("rot", &self.rot)?;
+            state.serialize_field("disp", &self.disp)?;
+            state.end()
         }
     }
 }
@@ -213,6 +214,7 @@ mod eders_de {
     use super::Decomposed;
     use serde::{self, Deserialize};
     use std::marker::PhantomData;
+    use std::fmt;
 
     enum DecomposedField {
         Scale,
@@ -221,7 +223,7 @@ mod eders_de {
     }
 
     impl Deserialize for DecomposedField {
-        fn deserialize<D>(deserializer: &mut D) -> Result<DecomposedField, D::Error>
+        fn deserialize<D>(deserializer: D) -> Result<DecomposedField, D::Error>
             where D: serde::Deserializer
         {
             struct DecomposedFieldVisitor;
@@ -229,7 +231,11 @@ mod eders_de {
             impl serde::de::Visitor for DecomposedFieldVisitor {
                 type Value = DecomposedField;
 
-                fn visit_str<E>(&mut self, value: &str) -> Result<DecomposedField, E>
+                fn expecting(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
+                    formatter.write_str("decomposed field visitor")
+                }
+
+                fn visit_str<E>(self, value: &str) -> Result<DecomposedField, E>
                     where E: serde::de::Error
                 {
                     match value {
@@ -248,7 +254,7 @@ mod eders_de {
     impl<S: VectorSpace, R> Deserialize for Decomposed<S, R>
         where S: Deserialize, S::Scalar: Deserialize, R: Deserialize
     {
-        fn deserialize<D>(deserializer: &mut D) -> Result<Decomposed<S, R>, D::Error>
+        fn deserialize<D>(deserializer: D) -> Result<Decomposed<S, R>, D::Error>
             where D: serde::de::Deserializer
         {
             const FIELDS: &'static [&'static str] = &["scale", "rot", "disp"];
@@ -263,7 +269,11 @@ mod eders_de {
     {
         type Value = Decomposed<S, R>;
 
-        fn visit_map<V>(&mut self, mut visitor: V) -> Result<Decomposed<S, R>, V::Error>
+        fn expecting(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
+            formatter.write_str("decomposed field visitor")
+        }
+
+        fn visit_map<V>(self, mut visitor: V) -> Result<Decomposed<S, R>, V::Error>
             where V: serde::de::MapVisitor
         {
             let mut scale = None;
@@ -281,20 +291,18 @@ mod eders_de {
 
             let scale = match scale {
                 Some(scale) => scale,
-                None => try!(visitor.missing_field("scale")),
+                None => return Err(<V::Error as serde::de::Error>::missing_field("scale")),
             };
 
             let rot = match rot {
                 Some(rot) => rot,
-                None => try!(visitor.missing_field("rot")),
+                None => return Err(<V::Error as serde::de::Error>::missing_field("dot")),
             };
 
             let disp = match disp {
                 Some(disp) => disp,
-                None => try!(visitor.missing_field("disp")),
+                None => return Err(<V::Error as serde::de::Error>::missing_field("disp")),
             };
-
-            try!(visitor.end());
 
             Ok(Decomposed { scale: scale, rot: rot, disp: disp })
         }

@@ -1,4 +1,4 @@
-// Copyright 2013-2014 The cgmath_lux Developers. For a full listing of the authors,
+// Copyright 2013-2014 The acgmath Developers. For a full listing of the authors,
 // refer to the Cargo.toml file at the top-level directory of this distribution.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,12 +16,12 @@
 #[macro_use]
 extern crate approx;
 #[macro_use]
-extern crate cgmath_lux;
+extern crate acgmath;
 
 pub mod matrix2 {
     use std::f64;
 
-    use cgmath_lux::*;
+    use acgmath::*;
 
     const A: Matrix2<f64> = Matrix2 { x: Vector2 { x: 1.0f64, y: 3.0f64 },
                                       y: Vector2 { x: 2.0f64, y: 4.0f64 } };
@@ -168,7 +168,7 @@ pub mod matrix2 {
 }
 
 pub mod matrix3 {
-    use cgmath_lux::*;
+    use acgmath::*;
 
     const A: Matrix3<f64> = Matrix3 { x: Vector3 { x: 1.0f64, y: 4.0f64, z:  7.0f64 },
                                       y: Vector3 { x: 2.0f64, y: 5.0f64, z:  8.0f64 },
@@ -316,7 +316,7 @@ pub mod matrix3 {
     }
 
     mod from_axis_x {
-        use cgmath_lux::*;
+        use acgmath::*;
 
         fn check_from_axis_angle_x(pitch: Rad<f32>) {
             let found = Matrix3::from_angle_x(pitch);
@@ -330,7 +330,7 @@ pub mod matrix3 {
     }
 
     mod from_axis_y {
-        use cgmath_lux::*;
+        use acgmath::*;
 
         fn check_from_axis_angle_y(yaw: Rad<f32>) {
             let found = Matrix3::from_angle_y(yaw);
@@ -344,7 +344,7 @@ pub mod matrix3 {
     }
 
     mod from_axis_z {
-        use cgmath_lux::*;
+        use acgmath::*;
 
         fn check_from_axis_angle_z(roll: Rad<f32>) {
             let found = Matrix3::from_angle_z(roll);
@@ -359,7 +359,7 @@ pub mod matrix3 {
 
     mod from_axis_angle {
         mod axis_x {
-            use cgmath_lux::*;
+            use acgmath::*;
 
             fn check_from_axis_angle_x(pitch: Rad<f32>) {
                 let found = Matrix3::from_axis_angle(Vector3::unit_x(), pitch);
@@ -373,7 +373,7 @@ pub mod matrix3 {
         }
 
         mod axis_y {
-            use cgmath_lux::*;
+            use acgmath::*;
 
             fn check_from_axis_angle_y(yaw: Rad<f32>) {
                 let found = Matrix3::from_axis_angle(Vector3::unit_y(), yaw);
@@ -387,7 +387,7 @@ pub mod matrix3 {
         }
 
         mod axis_z {
-            use cgmath_lux::*;
+            use acgmath::*;
 
             fn check_from_axis_angle_z(roll: Rad<f32>) {
                 let found = Matrix3::from_axis_angle(Vector3::unit_z(), roll);
@@ -402,7 +402,7 @@ pub mod matrix3 {
     }
 
     mod rotate_from_euler {
-        use cgmath_lux::*;
+        use acgmath::*;
 
         #[test]
         fn test_x() {
@@ -458,7 +458,7 @@ pub mod matrix3 {
     }
 
     mod rotate_from_axis_angle {
-        use cgmath_lux::*;
+        use acgmath::*;
 
         #[test]
         fn test_x() {
@@ -512,7 +512,7 @@ pub mod matrix3 {
 }
 
 pub mod matrix4 {
-    use cgmath_lux::*;
+    use acgmath::*;
 
     const A: Matrix4<f64> = Matrix4 { x: Vector4 { x: 1.0f64, y: 5.0f64, z:  9.0f64, w: 13.0f64 },
                                       y: Vector4 { x: 2.0f64, y: 6.0f64, z: 10.0f64, w: 14.0f64 },
@@ -732,7 +732,7 @@ pub mod matrix4 {
     }
 
     mod from {
-        use cgmath_lux::*;
+        use acgmath::*;
 
         #[test]
         fn test_quaternion() {

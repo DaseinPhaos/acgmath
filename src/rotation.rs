@@ -1,4 +1,4 @@
-// Copyright 2014 The cgmath_lux Developers. For a full listing of the authors,
+// Copyright 2014 The acgmath Developers. For a full listing of the authors,
 // refer to the Cargo.toml file at the top-level directory of this distribution.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -110,11 +110,11 @@ pub trait Rotation3<S: BaseFloat>: Rotation<Point3<S>>
 /// matrix:
 ///
 /// ```no_run
-/// use cgmath_lux::Rad;
-/// use cgmath_lux::Vector2;
-/// use cgmath_lux::{Matrix, Matrix2};
-/// use cgmath_lux::{Rotation, Rotation2, Basis2};
-/// use cgmath_lux::ApproxEq;
+/// use acgmath::Rad;
+/// use acgmath::Vector2;
+/// use acgmath::{Matrix, Matrix2};
+/// use acgmath::{Rotation, Rotation2, Basis2};
+/// use acgmath::ApproxEq;
 /// use std::f64;
 ///
 /// // For simplicity, we will rotate the unit x vector to the unit y vector --

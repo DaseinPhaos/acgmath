@@ -1,4 +1,4 @@
-// Copyright 2016 The cgmath_lux Developers. For a full listing of the authors,
+// Copyright 2016 The acgmath Developers. For a full listing of the authors,
 // refer to the Cargo.toml file at the top-level directory of this distribution.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -60,7 +60,7 @@ use num::BaseFloat;
 /// you can use the following code:
 ///
 /// ```
-/// use cgmath_lux::{Deg, Euler, Quaternion};
+/// use acgmath::{Deg, Euler, Quaternion};
 ///
 /// let rotation = Quaternion::from(Euler {
 ///     x: Deg(90.0),

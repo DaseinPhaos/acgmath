@@ -1,4 +1,4 @@
-// Copyright 2015 The cgmath_lux Developers. For a full listing of the authors,
+// Copyright 2015 The acgmath Developers. For a full listing of the authors,
 // refer to the Cargo.toml file at the top-level directory of this distribution.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,12 +13,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-extern crate cgmath_lux;
+extern crate acgmath;
 
-use cgmath_lux::*;
+use acgmath::*;
 
 mod rotation {
-    use super::cgmath_lux::*;
+    use super::acgmath::*;
 
     pub fn a2<R: Rotation2<f64>>() -> R {
         Rotation2::from_angle(Deg(30.0))
