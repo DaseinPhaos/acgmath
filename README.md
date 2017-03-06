@@ -1,6 +1,8 @@
 # acgmath-rs
 
-A testbed fork of `cgmath-rs`. With optional serialization and simd support.
+[![Build Status](https://travis-ci.org/brendanzab/cgmath.svg?branch=master)](https://travis-ci.org/brendanzab/cgmath)
+
+A testbed fork of `cgmath-rs`. With optional serialization and simd support. These options are on by default, thus it requires a nightly version of `rustc` to get compiled. 
 
 ## Why the Fork
 

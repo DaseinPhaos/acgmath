@@ -27,7 +27,7 @@ keywords = ["gamedev", "math", "matrix", "vector", "quaternion"]
 name = "acgmath"
 
 [features]
-unstable = []
+stable = ["eders"]
 default = ["eders", "use_simd"]
 eders = ["serde", "serde_derive"]
 use_simd = ["simd"]
