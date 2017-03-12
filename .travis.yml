@@ -5,6 +5,11 @@ rust:
   - beta
   - stable
 
+  os:
+  - linux
+  - windows
+  - osx
+
 script:
   - cargo build && cargo test
   - if [[ "$TRAVIS_RUST_VERSION" == "nightly" ]]; then cargo bench; fi
