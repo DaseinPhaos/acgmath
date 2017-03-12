@@ -5,10 +5,10 @@ rust:
   - beta
   - stable
 
-  os:
-   - linux
-   - windows
-   - osx
+os:
+  - linux
+  - windows
+  - osx
 
 script:
   - cargo build && cargo test
