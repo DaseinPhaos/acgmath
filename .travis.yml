@@ -6,9 +6,9 @@ rust:
   - stable
 
   os:
-  - linux
-  - windows
-  - osx
+   - linux
+   - windows
+   - osx
 
 script:
   - cargo build && cargo test
