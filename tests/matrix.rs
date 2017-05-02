@@ -344,7 +344,7 @@ pub mod matrix3 {
 
         fn check_look_at(dir: Vector3<f64>, up: Vector3<f64>) {
             let m = Matrix3::look_at(dir, up);
-            assert_relative_eq!(m*dir, -Vector3::unit_z());
+            assert_relative_eq!(m*dir, Vector3::unit_z());
         }
 
         #[test]
@@ -806,7 +806,7 @@ pub mod matrix4 {
         const B: Point3<f32> = Point3{x:1.0, y:2.0, z:3.0};
         const C: Point3<f32> = Point3{x:-8.0, y:-7.0, z:6.0};
         const UP: Vector3<f32> = Vector3{x:0.0, y:-1.0, z:2.0};
-        const LOOK: Vector3<f32> = Vector3{x:0.0, y:0.0, z:-1.0};
+        const LOOK: Vector3<f32> = Vector3{x:0.0, y:0.0, z:1.0};
         
         fn check_look_at(eye: Point3<f32>, center: Point3<f32>, up: Vector3<f32>) {
             let m = Matrix4::look_at(eye, center, up);
