@@ -133,7 +133,7 @@ impl<S: BaseFloat> Matrix3<S> {
         let side = up.cross(dir).normalize();
         let up = dir.cross(side).normalize();
 
-        Matrix3::from_cols(side, up, dir).transpose()
+        Matrix3::from_cols(side, up, -dir).transpose()
     }
 
     /// Create a rotation matrix from a rotation around the `x` axis (pitch).
