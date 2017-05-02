@@ -93,8 +93,13 @@ impl<S: BaseFloat> Matrix2<S> {
         Matrix2 { x: c0, y: c1 }
     }
 
+<<<<<<< HEAD
     /// Create a homogeneous transformation matrix that will cause a vector `dir`
     /// to point towards `Vectors::unit_y()`, using `up` for orientation.
+=======
+    /// Create a homogeneous transformation matrix that will cause a vector `(0, 1)`
+    /// to point at `dir`, using `up` for orientation.
+>>>>>>> 56acf2d89f2039c7bce93fa157f592908439a652
     pub fn look_at(dir: Vector2<S>, up: Vector2<S>) -> Matrix2<S> {
         //TODO: verify look_at 2D
         Matrix2::from_cols(up, dir).transpose()
@@ -227,9 +232,15 @@ impl<S: BaseFloat> Matrix4<S> {
                      S::zero(), S::zero(), S::zero(), S::one())
     }
 
+<<<<<<< HEAD
     /// Create a transformation matrix that will transform a vector
     /// `(center-dir)` to point towards `Vector3::unit_z()`, as well as transform
     /// a point `eye` to `Point3::origin()`, using `up` for orientation.
+=======
+    /// Create a homogeneous transformation matrix that will cause a vector `(0, 0, 1)`
+    /// to point at `dir`, a point `eye` transformed to `P::origin(), using `up` for 
+    /// orientation.
+>>>>>>> 56acf2d89f2039c7bce93fa157f592908439a652
     pub fn look_at(eye: Point3<S>, center: Point3<S>, up: Vector3<S>) -> Matrix4<S> {
         let f = (center - eye).normalize();
         let s = up.cross(f).normalize();
@@ -241,9 +252,15 @@ impl<S: BaseFloat> Matrix4<S> {
                      -eye.dot(s), -eye.dot(u), -eye.dot(f), S::one())
     }
 
+<<<<<<< HEAD
     /// Create a transformation matrix that will transform a vector
     /// `(center-dir)` to point towards `-Vector3::unit_z()`, as well as transform
     /// a point `eye` to `Point3::origin()`, using `up` for orientation.
+=======
+    /// Create a homogeneous transformation matrix that will cause a vector `(0, 0, -1)`
+    /// to point at `dir`, a point `eye` transformed to `P::origin(), using `up` for 
+    /// orientation.
+>>>>>>> 56acf2d89f2039c7bce93fa157f592908439a652
     pub fn look_at_neg_z(eye: Point3<S>, center: Point3<S>, up: Vector3<S>) -> Matrix4<S> {
         let f = (center - eye).normalize();
         let s = f.cross(up).normalize();
