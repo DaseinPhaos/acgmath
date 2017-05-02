@@ -810,23 +810,19 @@ pub mod matrix4 {
         
         fn check_look_at(eye: Point3<f32>, center: Point3<f32>, up: Vector3<f32>) {
             let m = Matrix4::look_at(eye, center, up);
+            let mt = <Matrix4<_> as Transform<_>>::look_at(eye, center, up);
             let dir = (center - eye).normalize();
             assert_relative_eq!(m.transform_vector(dir), LOOK);
             assert_relative_eq!(m.transform_point(eye), A);
+            assert_relative_eq!(mt.transform_vector(dir), LOOK);
+            assert_relative_eq!(mt.transform_point(eye), A);
         }
-
-        // fn check_look_at_dir(dir: Vector3<f32>, up: Vector3<f32>) {
-        //     let m = <Matrix4<f32> as Rotation<Point3<f32>>>::look_at(dir, up);
-        //     assert_relative_eq!(m.transform_vector(dir), LOOK);
-        // }
 
         #[test]
         fn test_look_at() {
             check_look_at(A, B, UP);
             check_look_at(B, C, UP);
             check_look_at(A, C, UP);
-            // check_look_at_dir((B-A).normalize(), UP);
-            // check_look_at_dir((A-C).normalize(), UP);
         }
     }
 }
