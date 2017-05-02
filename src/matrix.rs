@@ -232,8 +232,8 @@ impl<S: BaseFloat> Matrix4<S> {
     /// orientation.
     pub fn look_at(eye: Point3<S>, center: Point3<S>, up: Vector3<S>) -> Matrix4<S> {
         let f = (center - eye).normalize();
-        let s = f.cross(up).normalize();
-        let u = s.cross(f);
+        let s = up.cross(f).normalize();
+        let u = f.cross(s).normalize();
 
         Matrix4::new(s.x.clone(), u.x.clone(), f.x.clone(), S::zero(),
                      s.y.clone(), u.y.clone(), f.y.clone(), S::zero(),
@@ -918,6 +918,10 @@ impl<S: BaseFloat> Transform<Point3<S>> for Matrix4<S> {
     One::one()
   }
 
+  /// Create a transformation that rotates a vector to look at `center` from `eye`,
+  /// using `up` for orientation.
+  /// In addition, a point `eye` would be translated to `Point3::origin()` by the
+  /// resultant matrix.
   fn look_at(eye: Point3<S>, center: Point3<S>, up: Vector3<S>) -> Matrix4<S> {
     Matrix4::look_at(eye, center, up)
   }
